@@ -97,7 +97,7 @@
                     $success = 1;
                 }
             $i++;
-            $file = fopen("uploads/screen_dimen.txt","w") or die("An error occurred");
+            $file = fopen("screen_dimen.txt","w") or die("An error occurred");
             $data = "width=".$_POST['width'].";height=".$_POST['height'];
             fwrite($file, $data);
             fclose($file);
@@ -111,7 +111,7 @@
             $i = 1;
         	foreach($src as $val)
         	{
-        		$val = "uploads/Processed/".$val;
+        		$val = "Processed/".$val;
         		switch ($i) {
         			case 1:
         				$image_name = "Full screen, portrait";
@@ -136,7 +136,7 @@
         	echo "</div>";
         }
     }
-    exec("java ImageResizer 2>&10");
+    exec("java ImgResizer 2>&10");
 ?>
 </body>
 </html>
